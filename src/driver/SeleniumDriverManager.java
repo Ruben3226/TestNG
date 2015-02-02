@@ -1,13 +1,13 @@
 /*
  *
  */
-
 package driver;
 
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -18,6 +18,7 @@ public class SeleniumDriverManager
     private static SeleniumDriverManager manager = null;
     private WebDriver driver;
     private WebDriverWait wait;
+    private String baseUrl = "http://newtours.demoaut.com/";
 
     protected SeleniumDriverManager()
     {
@@ -31,9 +32,10 @@ public class SeleniumDriverManager
     {
     	driver = new FirefoxDriver();
     	driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 30, 100);
+        driver.get(baseUrl);
     }
 
     public static SeleniumDriverManager getManager()

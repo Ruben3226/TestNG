@@ -25,7 +25,7 @@ public class ReservationPage {
 		driver.findElement(By.name("login")).click();
 		return (driver.findElement(By.linkText("SIGN-OFF")).getText());
 	}
-	public String verBoton() {
+	public String showButton() {
 		String message=""; 
 		if (driver.findElement(By.name("findFlights"))!=null) {
 			message="exist";	
@@ -36,11 +36,9 @@ public class ReservationPage {
 		return message;
 	}
 
-
 	public void Reservation() {	   
 		new Select(driver.findElement(By.name("airline"))).selectByVisibleText("Blue Skies Airlines");
-		driver.findElement(By.name("findFlights")).click();
-		
+		driver.findElement(By.name("findFlights")).click();		
 		driver.findElement(By.name("reserveFlights")).click();
 		driver.findElement(By.name("passFirst0")).clear();
 		driver.findElement(By.name("passFirst0")).sendKeys("Ruben");
@@ -51,10 +49,18 @@ public class ReservationPage {
 		driver.findElement(By.name("creditnumber")).sendKeys("4444");
 		driver.findElement(By.name("buyFlights")).click();
 	}
-	public String VerifyConfirmReservation() {	
-		//String r= driver.findElement(By.xpath("//tr[3]/td/p/font")).getText();
-		//System.out.print(r);
-		return	driver.findElement(By.xpath("//tr[3]/td/p/font")).getText();
+	public Boolean VerifyConfirmReservation() {	
+		String r= driver.findElement(By.xpath("//tr[3]/td/p/font")).getText();
+		System.out.print(r);
+		Boolean successMess=null;
+		if(r.contains("has been booked!")){
+			successMess	= true;
+		}
+		else{
+			successMess = false;
+		}
+		//return	driver.findElement(By.xpath("//tr[3]/td/p/font")).getText();
+		return successMess;
 	}
 
 

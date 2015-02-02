@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="Login">
+  <ReviewIssue id="I5FZAYKF">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-01-27 :: 20:32:35:967 BOT</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-01-27 :: 20:34:34:088 BOT</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>Login</ReviewerId>
+    <AssignedTo>Login</AssignedTo>
+    <File line="12">src/pages/ReservationPage.java</File>
+    <Type>item.type.label.codingStandards</Type>
+    <Severity>item.severity.label.critical</Severity>
+    <Summary></Summary>
+    <Description></Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.resolution.label.validDuplicate</Resolution>
+    <Status>item.status.label.resolved</Status>
+  </ReviewIssue>
+</Review>
